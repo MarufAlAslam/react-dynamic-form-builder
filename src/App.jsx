@@ -8,7 +8,10 @@ function App() {
   return (
     <div className="App">
       <div className="flex justify items-start">
-        <DndHolder initialFields={initialFields} />
+        <DndHolder
+          initialFields={initialFields}
+          setInitialFields={setInitialFields}
+        />
         <Toolbar
           initialFields={initialFields}
           setInitialFields={setInitialFields}
