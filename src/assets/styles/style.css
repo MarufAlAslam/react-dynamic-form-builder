@@ -1,0 +1,32 @@
+.dnd-holder {
+  width: 85%;
+  min-height: 100vh;
+}
+
+.toolbar {
+  width: 15%;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+}
+.item {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+.field {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  border-radius: 5px;
+  padding: 20px;
+}
+.input-bordered {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: unset !important;
+}
+
+.input-bordered:focus {
+  outline: 1px solid green;
+}
