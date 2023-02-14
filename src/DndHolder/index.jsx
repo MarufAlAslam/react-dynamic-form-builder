@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
+
 const DndHolder = ({ initialFields, setInitialFields }) => {
   useEffect(() => {
     console.log(initialFields);
@@ -55,6 +56,12 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
                   </option>
                 ))}
               </field.inputType>
+            )}
+            {field.inputType === "textarea" && (
+              <field.inputType
+                className="w-full input input-bordered"
+                placeholder={field.placeholder}
+              />
             )}
           </div>
         ))}

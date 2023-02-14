@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { GrDrag, GrCheckboxSelected } from "react-icons/gr";
+import { TbSelect } from "react-icons/tb";
 import { BiText } from "react-icons/bi";
+import { BsTextareaT } from "react-icons/bs";
 
 const Toolbar = ({ initialFields, setInitialFields }) => {
   const items = [
@@ -19,7 +21,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     {
       id: 2,
       name: "Select",
-      icon: GrCheckboxSelected,
+      icon: TbSelect,
       inputType: "select",
       type: "select",
       defaultValue: "",
@@ -43,6 +45,18 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
           label: "Option 3",
         },
       ],
+    },
+    {
+      id: 3,
+      name: "Text Area",
+      icon: BsTextareaT,
+      inputType: "textarea",
+      type: "textarea",
+      defaultValue: "",
+      value: "",
+      placeholder: "Enter Your Message",
+      required: false,
+      options: [],
     },
   ];
 
