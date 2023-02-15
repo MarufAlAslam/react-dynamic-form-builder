@@ -3,6 +3,7 @@ import DndHolder from "./DndHolder";
 import Toolbar from "./Toolbar";
 import "./assets/styles/style.css";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
+import ModalPreview from "./Modal";
 
 function App() {
   const [initialFields, setInitialFields] = useState([]);
@@ -11,8 +12,10 @@ function App() {
   const [preview, setPreview] = useState(false);
 
   const previewHandler = () => {
+    setModalVisible(!modalVisible);
     setPreview(!preview);
   };
+  console.log(modalVisible);
   return (
     <div className="App">
       <div className="p-4 flex justify-between items-center">
@@ -43,6 +46,7 @@ function App() {
           setInitialFields={setInitialFields}
           modalVisible={modalVisible}
         />
+        {modalVisible && <ModalPreview closeModalHandler={previewHandler} />}
       </div>
     </div>
   );

@@ -58,3 +58,20 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* modal */
+.modal-preview {
+  width: 75%;
+  height: 75vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
