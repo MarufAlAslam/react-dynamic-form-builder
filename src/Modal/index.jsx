@@ -18,7 +18,11 @@ const ModalPreview = ({ closeModalHandler, initialFields }) => {
         <input
           type="text"
           className="input p-3 pl-0 text-3xl"
-          defaultValue={localStorage.getItem("formName")}
+          defaultValue={
+            localStorage.getItem("formName")
+              ? localStorage.getItem("formName")
+              : "Untitled Form"
+          }
           name=""
           id=""
           onChange={(e) => localStorage.setItem("formName", e.target.value)}
