@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GrDrag, GrCheckboxSelected } from "react-icons/gr";
-import { TbSelect } from "react-icons/tb";
+import { TbSelect, TbSortAscendingNumbers } from "react-icons/tb";
 import { BiText } from "react-icons/bi";
 import { BsTextareaT } from "react-icons/bs";
 
@@ -8,11 +8,11 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
   const items = [
     {
       id: 1,
-      name: "Text",
+      name: "Text Input",
       icon: BiText,
       inputType: "input",
       type: "text",
-      defaultValue: "hello world",
+      defaultValue: 0,
       value: "",
       placeholder: "Enter text",
       required: false,
@@ -20,6 +20,18 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     },
     {
       id: 2,
+      name: "Number Input",
+      icon: TbSortAscendingNumbers,
+      inputType: "input",
+      type: "number",
+      defaultValue: "hello world",
+      value: "",
+      placeholder: "Enter The Number",
+      required: false,
+      options: [],
+    },
+    {
+      id: 3,
       name: "Select",
       icon: TbSelect,
       inputType: "select",
@@ -47,7 +59,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       name: "Text Area",
       icon: BsTextareaT,
       inputType: "textarea",
@@ -61,7 +73,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
   ];
 
   const itemClickHandler = (item) => {
-    console.log(`Item clicked: ${item.name}`);
+    // console.log(`Item clicked: ${item.name}`);
     setInitialFields([...initialFields, item]);
   };
   return (

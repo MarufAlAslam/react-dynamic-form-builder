@@ -15,7 +15,7 @@ function App() {
     setModalVisible(!modalVisible);
     setPreview(!preview);
   };
-  console.log(modalVisible);
+  // console.log(modalVisible);
   return (
     <div className="App">
       <div className="p-4 flex justify-between items-center">
@@ -46,7 +46,12 @@ function App() {
           setInitialFields={setInitialFields}
           modalVisible={modalVisible}
         />
-        {modalVisible && <ModalPreview closeModalHandler={previewHandler} />}
+        {modalVisible && (
+          <ModalPreview
+            closeModalHandler={previewHandler}
+            initialFields={initialFields}
+          />
+        )}
       </div>
     </div>
   );

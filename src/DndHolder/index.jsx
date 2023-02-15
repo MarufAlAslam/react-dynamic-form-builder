@@ -4,9 +4,9 @@ import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 
 const DndHolder = ({ initialFields, setInitialFields }) => {
-  useEffect(() => {
-    console.log(initialFields);
-  }, [initialFields]);
+  // useEffect(() => {
+  //   console.log(initialFields);
+  // }, [initialFields]);
 
   const deleteItemHandler = (index) => {
     const newInitialFields = initialFields.filter((item, i) => i !== index);
@@ -40,6 +40,7 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
                   placeholder={field.placeholder}
                   defaultValue={field.defaultValue}
                   name={`input${index}`}
+                  type={field.type}
                 />
               )}
               {field.inputType === "select" && (
