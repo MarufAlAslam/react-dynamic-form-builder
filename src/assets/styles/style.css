@@ -3,10 +3,15 @@
   min-height: 100vh;
 }
 
+body,
+html {
+  background-color: #f2f7fa;
+}
+
 .toolbar {
   width: 15%;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
   min-height: 100vh;
+  height: 100%;
 }
 .item {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -29,4 +34,27 @@
 
 .input-bordered:focus {
   outline: 1px solid green;
+}
+
+.blue {
+  color: #0b3351;
+}
+.gray {
+  color: #959595;
+}
+
+.card.h-full {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

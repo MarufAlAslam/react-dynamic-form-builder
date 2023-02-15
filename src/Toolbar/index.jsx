@@ -12,7 +12,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
       icon: BiText,
       inputType: "input",
       type: "text",
-      defaultValue: "",
+      defaultValue: "hello world",
       value: "",
       placeholder: "Enter text",
       required: false,
@@ -65,30 +65,32 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     setInitialFields([...initialFields, item]);
   };
   return (
-    <div className="toolbar p-4">
-      <h2 className="text-lg mb-4">ToolBar</h2>
-      <hr />
+    <div className="toolbar p-4 pl-0">
+      <div className="card h-full rounded-md p-4 bg-white shadow-md">
+        <h2 className="text-lg mb-4">ToolBar</h2>
+        <hr />
 
-      <div className="toolbar-items">
-        {items.map((item, index) => (
-          <button
-            key={index}
-            onClick={() => itemClickHandler(item)}
-            className="btn w-full item flex justify-between items-center"
-          >
-            <div className="contents w-full">
-              <div className="icon">
-                <item.icon className="mr-2" />
+        <div className="toolbar-items">
+          {items.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => itemClickHandler(item)}
+              className="btn w-full item flex justify-between items-center"
+            >
+              <div className="contents w-full">
+                <div className="icon">
+                  <item.icon className="mr-2" />
+                </div>
+                <div className="text w-full text-left">
+                  <h4 className="text-lg">{item.name}</h4>
+                </div>
               </div>
-              <div className="text w-full text-left">
-                <h4 className="text-lg">{item.name}</h4>
+              <div className="drag">
+                <GrDrag />
               </div>
-            </div>
-            <div className="drag">
-              <GrDrag />
-            </div>
-          </button>
-        ))}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
