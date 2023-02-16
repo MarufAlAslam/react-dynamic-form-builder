@@ -13,7 +13,7 @@ const ModalPreview = ({ closeModalHandler, initialFields }) => {
 
   console.log("generated: " + generatedForm[0].formName);
   return (
-    <div className="modal-preview p-10">
+    <div className="modal-preview px-10 pb-5">
       <div className="flex justify-between items-center">
         <input
           type="text"

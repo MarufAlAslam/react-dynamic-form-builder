@@ -75,7 +75,7 @@ html {
   align-items: center;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  border-top: 10px solid indianred;
+  border-top: 20px solid #7248b9;
 }
 
 .border-left {

@@ -38,25 +38,9 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
       type: "select",
       defaultValue: "",
       value: "",
-      placeholder: "Enter text",
+      placeholder: "Enter Option",
       required: false,
-      options: [
-        {
-          id: "s-1",
-          value: "Option 1",
-          label: "Option 1",
-        },
-        {
-          id: "s-2",
-          value: "Option 2",
-          label: "Option 2",
-        },
-        {
-          id: "s-3",
-          value: "Option 3",
-          label: "Option 3",
-        },
-      ],
+      options: [],
     },
     {
       id: 4,
