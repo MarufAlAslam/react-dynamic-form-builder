@@ -89,13 +89,16 @@ const ModalPreview = ({ closeModalHandler, initialFields }) => {
               </div>
             ))
           : "No fields added yet"}
-        <hr />
-        <div className="text-right">
-          <button className="btn bg-primary text-white p-3 mt-4 px-6 rounded-md">
-            SAVE
-          </button>
-        </div>
-        ;
+        {initialFields.length > 0 && (
+          <>
+            <hr />
+            <div className="text-right">
+              <button className="btn bg-primary text-white p-3 mt-4 px-6 rounded-md">
+                SAVE
+              </button>
+            </div>
+          </>
+        )}
       </form>
     </div>
   );

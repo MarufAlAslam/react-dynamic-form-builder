@@ -8,6 +8,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
   const items = [
     {
       id: 1,
+      label: "Default Label",
       name: "Text Input",
       icon: BiText,
       inputType: "input",
@@ -20,6 +21,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     },
     {
       id: 2,
+      label: "Default Label",
       name: "Number Input",
       icon: TbSortAscendingNumbers,
       inputType: "input",
@@ -32,6 +34,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     },
     {
       id: 3,
+      label: "Default Label",
       name: "Select",
       icon: TbSelect,
       inputType: "select",
@@ -44,6 +47,7 @@ const Toolbar = ({ initialFields, setInitialFields }) => {
     },
     {
       id: 4,
+      label: "Default Label",
       name: "Text Area",
       icon: BsTextareaT,
       inputType: "textarea",

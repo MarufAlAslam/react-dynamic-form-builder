@@ -14,8 +14,12 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
     setInitialFields(newInitialFields);
   };
 
-  const labelOnsubmitHandler = (e) => {
+  console.log(initialFields);
+
+  const labelOnsubmitHandler = (e, index) => {
     e.preventDefault();
+    const newInitialFields = [...initialFields];
+    console.log(e.target[0]);
   };
 
   return (
@@ -29,6 +33,7 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
                   field={field}
                   labelOnsubmitHandler={labelOnsubmitHandler}
                   title="Change Label"
+                  defaultValue={field.name}
                 />
                 <div className="actions">
                   <button
@@ -44,6 +49,8 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
                   field={field}
                   labelOnsubmitHandler={labelOnsubmitHandler}
                   title="Change Placeholder"
+                  defaultValue={field.placeholder}
+                  index={index}
                 />
               )}
               {field.inputType === "select" && (
@@ -58,6 +65,7 @@ const DndHolder = ({ initialFields, setInitialFields }) => {
                   field={field}
                   labelOnsubmitHandler={labelOnsubmitHandler}
                   title="Change Placeholder"
+                  defaultValue={field.placeholder}
                 />
               )}
             </div>

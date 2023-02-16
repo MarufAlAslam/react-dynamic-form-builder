@@ -1,7 +1,13 @@
 import React from "react";
 import { TiTick } from "react-icons/ti";
 
-const EditFormField = ({ field, index, labelOnsubmitHandler, title }) => {
+const EditFormField = ({
+  field,
+  index,
+  labelOnsubmitHandler,
+  title,
+  defaultValue,
+}) => {
   return (
     <div>
       <div className="w-full">
@@ -19,7 +25,7 @@ const EditFormField = ({ field, index, labelOnsubmitHandler, title }) => {
           <input
             type="text"
             className="input input-bordered w-full p-1 mx-3"
-            defaultValue={field.placeholder}
+            defaultValue={defaultValue}
             name={`placeholder${index}`}
             id={`placeholder${index}`}
           />
