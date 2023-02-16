@@ -1,17 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/styles/style.css";
 import { ImCross } from "react-icons/im";
 
 const ModalPreview = ({ closeModalHandler, initialFields }) => {
-  const generatedForm = [
-    {
-      formId: "form-1",
-      formName: "Untitled Form",
-      fields: [...initialFields],
-    },
-  ];
+  const [finalGeneratedForm, setFinalGeneratedForm] = useState([]);
+  useEffect(() => {
+    const generatedForm = [
+      {
+        formId: "dynamicForm",
+        formName: localStorage.getItem("formName")
+          ? localStorage.getItem("formName")
+          : "Untitled Form",
+        fields: [...initialFields],
+      },
+    ];
+    setFinalGeneratedForm(generatedForm);
+  }, [initialFields]);
 
-  console.log("generated: " + generatedForm[0].formName);
+  const handleFinalFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(finalGeneratedForm);
+  };
+
+  // console.log("generated: " + finalGeneratedForm[0].formName);
   return (
     <div className="modal-preview px-10 pb-5">
       <div className="flex justify-between items-center">
@@ -33,50 +44,59 @@ const ModalPreview = ({ closeModalHandler, initialFields }) => {
       </div>
       <hr className="my-4" />
 
-      {initialFields.length > 0
-        ? initialFields.map((field, index) => (
-            <div
-              key={index}
-              className={`final-field my-4 border-left ${field.type}`}
-            >
-              <div className="field-header flex justify-between items-center">
-                <label htmlFor="">
-                  <h4 className="mb-2">{field.name}</h4>
-                </label>
-              </div>
-              {field.inputType === "input" && (
-                <field.inputType
-                  className="w-full input input-bordered"
-                  placeholder={field.placeholder}
-                  defaultValue={field.defaultValue}
-                  name={`input${index}`}
-                  type={field.type}
-                />
-              )}
-              {field.inputType === "select" && (
-                <field.inputType
-                  className="w-full input input-bordered"
-                  placeholder={field.placeholder}
-                >
-                  <option value="" hidden>
-                    Select
-                  </option>
-                  {field.options.map((option, index) => (
-                    <option key={index} value={option.value}>
-                      {option.label}
+      <form action="" onSubmit={handleFinalFormSubmit}>
+        {initialFields.length > 0
+          ? initialFields.map((field, index) => (
+              <div
+                key={index}
+                className={`final-field my-4 border-left ${field.type}`}
+              >
+                <div className="field-header flex justify-between items-center">
+                  <label htmlFor="">
+                    <h4 className="mb-2">{field.name}</h4>
+                  </label>
+                </div>
+                {field.inputType === "input" && (
+                  <field.inputType
+                    className="w-full input input-bordered"
+                    placeholder={field.placeholder}
+                    defaultValue={field.defaultValue}
+                    name={`input${index}`}
+                    type={field.type}
+                  />
+                )}
+                {field.inputType === "select" && (
+                  <field.inputType
+                    className="w-full input input-bordered"
+                    placeholder={field.placeholder}
+                  >
+                    <option value="" hidden>
+                      Select
                     </option>
-                  ))}
-                </field.inputType>
-              )}
-              {field.inputType === "textarea" && (
-                <field.inputType
-                  className="w-full input input-bordered"
-                  placeholder={field.placeholder}
-                />
-              )}
-            </div>
-          ))
-        : "No fields added yet"}
+                    {field.options.map((option, index) => (
+                      <option key={index} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </field.inputType>
+                )}
+                {field.inputType === "textarea" && (
+                  <field.inputType
+                    className="w-full input input-bordered"
+                    placeholder={field.placeholder}
+                  />
+                )}
+              </div>
+            ))
+          : "No fields added yet"}
+        <hr />
+        <div className="text-right">
+          <button className="btn bg-primary text-white p-3 mt-4 px-6 rounded-md">
+            SAVE
+          </button>
+        </div>
+        ;
+      </form>
     </div>
   );
 };
